@@ -1,0 +1,112 @@
+/* 1. Configuración General (Lienzo) */
+:root {
+  --color-fondo: #0f172a;     /* Azul oscuro elegante */
+  --color-tarjeta: #1e293b;   /* Azul grisáceo para las piezas */
+  --color-texto: #f8fafc;     /* Blanco suave */
+  --color-primario: #38bdf8;  /* Celeste brillante para destacar */
+  --color-detalle: #94a3b8;   /* Gris para textos secundarios */
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+}
+
+.portfolio-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* 2. Encabezado */
+.portfolio-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.portfolio-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: var(--color-primario);
+}
+
+.portfolio-header p {
+  color: var(--color-detalle);
+  font-size: 1.1rem;
+}
+
+/* 3. La Grilla (El tablero del rompecabezas) */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px; /* Espacio entre tarjetas */
+}
+
+/* 4. Las Tarjetas (Las piezas) */
+.art-card {
+  background-color: var(--color-tarjeta);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto al pasar el mouse (Hover) */
+.art-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(56, 189, 248, 0.2);
+}
+
+.art-image-container {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+}
+
+.art-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Hace que la imagen se adapte sin deformarse */
+  transition: transform 0.5s ease;
+}
+
+.art-card:hover .art-image-container img {
+  transform: scale(1.05); /* Efecto de zoom suave en la foto */
+}
+
+/* 5. Información de la Tarjeta */
+.art-info {
+  padding: 20px;
+}
+
+.art-info h3 {
+  margin: 0 0 10px 0;
+  font-size: 1.3rem;
+}
+
+/* Etiqueta de la Técnica (Grafito, Digital, etc.) */
+.badge {
+  display: inline-block;
+  background-color: rgba(56, 189, 248, 0.1);
+  color: var(--color-primario);
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  border: 1px solid rgba(56, 189, 248, 0.2);
+}
+
+.art-info p {
+  color: var(--color-detalle);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0 0 15px 0;
+}
+
+.art-info small {
+  color: rgba(255, 255, 255, 0.4);
+  display: block;
+}
